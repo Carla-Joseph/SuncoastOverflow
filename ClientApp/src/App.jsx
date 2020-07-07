@@ -13,7 +13,7 @@ export function App() {
       <main className="container-fluid p-4">
         <Header />
         <Switch>
-          <Route exact path="/questions">
+          <Route exact path="/">
             <Questions />
           </Route>
           <Route path="/questions/ask">

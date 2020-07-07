@@ -12,6 +12,11 @@ export function PostQuestion() {
         </div>
 
         <div className="form-group">
+          <label htmlFor="name">Language</label>
+          <input type="text" className="form-control" id="name" />
+        </div>
+
+        <div className="form-group">
           <label htmlFor="description">Ask a Question</label>
           <textarea type="text" className="form-control" id="description" />
           <small id="descriptionHelp" className="form-text text-muted"></small>
