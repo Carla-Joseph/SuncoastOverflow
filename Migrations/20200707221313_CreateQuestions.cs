@@ -15,6 +15,7 @@ namespace SuncoastOverflow.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: true),
                     Language = table.Column<string>(nullable: true)
+                    
                 },
                 constraints: table =>
                 {

@@ -29,7 +29,7 @@ export function NavBar() {
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <Link className="btn btn-success mr-2" to="/questions/add">
+          <Link className="btn btn-success mr-2" to="/questions/ask">
             + Post
           </Link>
           <input
