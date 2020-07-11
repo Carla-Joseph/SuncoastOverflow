@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export function NavBar() {
+export function NavBar(props) {
+  const [filterText, setFilterText] = useState('')
+
+  const handleClickSearch =event => {
+    props.setActiveFilter(filterText)
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="#">
-        <span className="mr-2" role="img" aria-label="taco">
-          image here
+        <span className="mr-2" role="img" aria-label="computer">
+          💻
         </span>
       </Link>
       <button
@@ -37,8 +43,13 @@ export function NavBar() {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            value={filterText}
+            onChange={event => setFilterText(event.target.value)}
           />
-          <span className="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <span
+            className="btn btn-outline-success my-2 my-sm-0"
+            onclick={handleClickSearch}
+          >
             Search
           </span>
         </form>

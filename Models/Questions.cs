@@ -6,6 +6,7 @@ namespace SuncoastOverflow.Models
         public string Name { get; set; }
         public string Language { get; set; }
         public string Question { get; set; }
-    
+        // public string Answer { get; set; }
+
     }
-} 
+}

@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 
 function SingleQuestionForList(props) {
   return (
-    <Link to="/questions/22" className="list-group-item list-group-item-action">
+    <Link
+      to={`/questions/answer/${props.question.id}`}
+      className="list-group-item list-group-item-action"
+    >
       <div className="d-flex w-100 justify-content-between">
         <h5 className="mb-1">{props.question.language}</h5>
         <small>8 Reviews</small>
@@ -29,11 +32,16 @@ function SingleQuestionForList(props) {
   )
 }
 
-export function Questions() {
+export function Questions(props) {
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
-    fetch('/api/Questions')
+    const url =
+      props.activeFilter.length === 0
+        ? `/api/Questions`
+        : `/api/Questions?filter=${props.activeFilter}`
+
+    fetch(url)
       .then(response => response.json())
       .then(apiData => setQuestions(apiData))
   })
