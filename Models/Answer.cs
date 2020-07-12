@@ -1,17 +1,14 @@
-using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace SuncoastOverflow.Models
 {
-    public class Questions
+    public class Answer
     {
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Language { get; set; }
-        [Required]
+        public DateTime CreateAt { get; private set; } = DateTime.Now;
         public string Question { get; set; }
-        // public string Answer { get; set; }
-
+        public int QuestionId { get; set; }
     }
 }

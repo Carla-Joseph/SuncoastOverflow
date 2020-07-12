@@ -4,6 +4,8 @@ import { useHistory } from 'react-router'
 export function PostQuestion() {
   const history = useHistory()
 
+  const [errorMessage, setErrorMessage] = useState()
+
   const [name, setName] = useState('')
   const [language, setLanguage] = useState('')
   const [question, setQuestion] = useState('')
@@ -30,12 +32,21 @@ export function PostQuestion() {
       mode: 'cors',
       credentials: 'include',
     })
-    history.push('/')
+    
+      history.push('/')
+
   }
 
   return (
     <div className="card">
       <div className="card-header">Ask a Question</div>
+      <div className="card-body">
+        {errorMessage && (
+          <div className="alert alert-danger" role="alert">
+            {errorMessage}
+          </div>
+        )}
+      </div>
 
       <div className="form-group">
         <label htmlFor="name">Name</label>
