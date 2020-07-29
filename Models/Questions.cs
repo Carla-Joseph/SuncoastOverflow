@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SuncoastOverflow.Models
@@ -11,7 +12,7 @@ namespace SuncoastOverflow.Models
         public string Language { get; set; }
         [Required]
         public string Question { get; set; }
-        // public string Answer { get; set; }
+        public List<Answer> Answer { get; set; }
 
     }
 }

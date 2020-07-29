@@ -35,11 +35,11 @@ namespace SuncoastOverflow.Controllers
         {
             if (filter == null)
             {
-                return await _context.Questions.ToListAsync();
+                return await _context.Questions.OrderBy(question => question.Language).Include(question => question.Answer).ToListAsync();
             }
             else
             {
-                return await _context.Questions.Where(question => question.Language.Contains(filter)).ToListAsync();
+                return await _context.Questions.Where(question => question.Language.Contains(filter)).OrderBy(question => question.Language).Include(question => question.Answer).ToListAsync();
             }
 
         }
